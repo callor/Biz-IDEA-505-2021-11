@@ -16,6 +16,11 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.5.31" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
         </element>
       </element>
     </root>

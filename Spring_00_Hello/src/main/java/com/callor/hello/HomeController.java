@@ -13,4 +13,8 @@ public class HomeController {
     public String home() {
         return "반갑습니다 나는 IntelliJ IDEA 입니다";
     }
+
+
+
+
 }
