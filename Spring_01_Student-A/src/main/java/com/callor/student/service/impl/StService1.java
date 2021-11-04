@@ -1,8 +1,9 @@
-package com.callor.student.service;
+package com.callor.student.service.impl;
 
+import com.callor.student.repository.StDaoImpl;
 import com.callor.student.model.StudentVO;
 import com.callor.student.repository.StDao;
-import com.callor.student.repository.StDaoImpl;
+import com.callor.student.service.StService;
 
 import java.util.Collections;
 import java.util.List;
@@ -25,16 +26,24 @@ import java.util.List;
  * 결합도를 낮추는 작업이 필요
  *
  */
-public class StService2 implements StService{
+public class StService1 implements StService {
 
     // interface 로 선언하고 상속받은 class 로 초기화(생성)하기
     // StDaoImpl 클래스를 사용하여 StDao 형(type)의 stDao 객체 생성
     // 클래스의 생성자를 호출하여 객체를 생성하면
     // 이 객체는 StDao 형 인스턴스가 된다
+    private StDaoImpl stDao1 = new StDaoImpl(); // 1번 코드
     private StDao stDao2 = new StDaoImpl(); // 2번 코드
 
     public List<StudentVO> selectAll() {
+
+        List<StudentVO> stList1 = stDao1.selectAll();
+        stList1 = stDao1.findAll();
+
         List<StudentVO> stList2 = stDao2.selectAll();
+        // stList2 = stDao2.findAll();
+
+        Collections.shuffle(stList2);
         return stList2;
     }
 

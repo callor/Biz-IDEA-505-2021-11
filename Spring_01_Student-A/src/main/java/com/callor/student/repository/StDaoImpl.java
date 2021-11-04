@@ -11,10 +11,7 @@ public class StDaoImpl implements StDao {
 
     private final String[] stNames =
             {"홍길동", "이몽룡", "성춘향", "임꺽정", "장영실", "장보고"};
-
     private final Random RND = new Random();
-    private final List<StudentVO> stList = new ArrayList();
-
     public List<StudentVO> findAll() {
         return null;
     }
@@ -22,6 +19,7 @@ public class StDaoImpl implements StDao {
     @Override
     public List<StudentVO> selectAll() {
 
+        final List<StudentVO> stList = new ArrayList();
         for(int i = 0 ; i < 10 ; i++) {
             String stNum = String.format("2021%04d",i+1);
             String stName = stNames[RND.nextInt(stNames.length)];
