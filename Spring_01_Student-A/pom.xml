@@ -28,6 +28,7 @@
         <maven.compiler.target>15</maven.compiler.target>
         <kotlin.version>1.5.31</kotlin.version>
         <java.version>1.8</java.version>
+        <tiles.version>3.0.8</tiles.version>
     </properties>
     <dependencies>
         <dependency>
@@ -67,6 +68,18 @@
             <version>2.13.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>${tiles.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-extras -->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-extras</artifactId>
+            <version>${tiles.version}</version>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
