@@ -8,7 +8,7 @@ import com.callor.student.service.StService2;
 public class Dispater_03 {
 
     public static void main(String[] args) {
-        
+
         StService stService = new StService2();
         StController3 stCon = new StController3(stService);
         stCon.list();
