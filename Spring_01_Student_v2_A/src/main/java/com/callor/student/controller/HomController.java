@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomController {
 
-    @ResponseBody
     @RequestMapping(value="/",method= RequestMethod.GET)
     public String home() {
-        return "Hello Korea";
+
+        // tiles_layout.xml 에 설정된 name 부분
+        return "HOME";
     }
 
 }

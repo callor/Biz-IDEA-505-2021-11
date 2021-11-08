@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- tiles layout 을 설정하기 위한 영역 -->
+<tiles-definitions>
+    <!-- 각각의 fragment 를 설정하는 부분 -->
+    <definition name="default" template="/WEB-INF/views/main_layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/fragment/header.jsp"/>
+        <put-attribute name="nav" value="/WEB-INF/views/fragment/nav.jsp"/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/fragment/footer.jsp" />
+    </definition>
+
+    <!-- default 로 설정된 부분을 상속받고, content 부분만 별도로 재 설정 -->
+    <definition name="HOME" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/home.jsp"/>
+    </definition>
+
+</tiles-definitions>

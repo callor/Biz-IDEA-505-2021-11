@@ -54,6 +54,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: oro:oro:2.0.8" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
     </root>

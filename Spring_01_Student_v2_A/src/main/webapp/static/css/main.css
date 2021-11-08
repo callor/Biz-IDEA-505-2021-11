@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: blue;
+}
+nav li {
+    padding:0.5rem;
+    margin:0 10px;
+    color:white;
+    cursor: pointer;
+}
+nav li:hover {
+    background-color: green;
+}
+footer {
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding: 1rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+section {
+    flex:1;
+}
+
+
