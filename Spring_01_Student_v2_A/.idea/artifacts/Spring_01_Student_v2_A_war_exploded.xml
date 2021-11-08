@@ -2,10 +2,11 @@
   <artifact type="exploded-war" name="Spring_01_Student_v2_A:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/Spring_01_Student_v2_A_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="Spring_01_Student_v2_A/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="jpa-descriptors" facet="Spring_01_Student_v2_A/jpa/JPA" />
+          <element id="module-output" name="student" />
+          <element id="jpa-descriptors" facet="student/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.6" />
@@ -87,6 +88,7 @@
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.11.20" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="student/web/Web" />
     </root>
   </artifact>
 </component>
