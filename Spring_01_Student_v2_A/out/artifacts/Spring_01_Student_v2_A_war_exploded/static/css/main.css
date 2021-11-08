@@ -8,6 +8,8 @@ header {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    background-color: green;
+    text-align: center;
     color: white;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }

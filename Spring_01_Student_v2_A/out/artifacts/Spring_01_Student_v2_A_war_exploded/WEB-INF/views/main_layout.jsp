@@ -10,7 +10,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <link href="${rootPath}/static/css/main.css?ver=2021-11-08-001"
+    <link href="${rootPath}/static/css/main.css?ver=2021-11-08-002"
           rel="stylesheet" />
     <title>학사관리</title>
 </head>
