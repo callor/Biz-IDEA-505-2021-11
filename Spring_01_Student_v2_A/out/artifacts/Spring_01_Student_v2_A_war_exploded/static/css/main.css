@@ -41,7 +41,7 @@ body {
     height: 100vh;
     width: 100vw;
 }
-section {
+section.content {
     flex:1;
 }
 

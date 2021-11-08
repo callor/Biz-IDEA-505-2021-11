@@ -17,7 +17,9 @@
 <body>
     <tiles:insertAttribute name="header"/>
     <tiles:insertAttribute name="nav" />
-    <tiles:insertAttribute name="content" />
+    <section class="content">
+        <tiles:insertAttribute name="content" />
+    </section>
     <tiles:insertAttribute name="footer"/>
 </body>
 </html>

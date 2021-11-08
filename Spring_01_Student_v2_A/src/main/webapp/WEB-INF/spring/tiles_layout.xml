@@ -18,4 +18,22 @@
         <put-attribute name="content" value="/WEB-INF/views/home.jsp"/>
     </definition>
 
+    <!--
+    와일드 카드
+    * : 모든것(단어, 스펠 개수에 관계없이)
+    ? : 스펠의 개수만큼
+           a? = a1, a2, aa, ab, ac .. 등과 일치하는 패턴
+           a?? = a11, a21, abb, acc .. 등과 일치하는 패턴
+    -->
+
+
+    <definition name="ST/*" extends="default" >
+        <put-attribute name="content"
+                       value="/WEB-INF/views/student/{1}.jsp"/>
+    </definition>
+    <definition name="*/*" extends="default">
+        <put-attribute name="content"
+                       value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+
 </tiles-definitions>

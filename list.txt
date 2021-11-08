@@ -1,0 +1,12 @@
+total 34
+drwxr-xr-x 1 callor 197121    0 Nov  8 13:22 ./
+drwxr-xr-x 1 callor 197121    0 Nov  2 10:33 ../
+drwxr-xr-x 1 callor 197121    0 Nov  8 12:17 .git/
+-rw-r--r-- 1 callor 197121  301 Nov  2 09:24 .gitignore
+-rw-r--r-- 1 callor 197121 1088 Nov  2 09:24 LICENSE
+-rw-r--r-- 1 callor 197121  146 Nov  2 09:27 README.md
+drwxr-xr-x 1 callor 197121    0 Nov  2 14:40 Spring_00_Hello/
+drwxr-xr-x 1 callor 197121    0 Nov  2 16:31 Spring_00_Hello-v2/
+drwxr-xr-x 1 callor 197121    0 Nov  4 12:56 Spring_01_Student-A/
+drwxr-xr-x 1 callor 197121    0 Nov  8 11:23 Spring_01_Student_v2_A/
+-rw-r--r-- 1 callor 197121    0 Nov  8 13:22 list.txt
