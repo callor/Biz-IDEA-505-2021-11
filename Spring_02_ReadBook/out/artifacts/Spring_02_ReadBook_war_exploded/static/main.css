@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+header {
+    background-color: green;
+    color:white;
+    padding:2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 2px black;
+}
+section.content {
+    flex:1;
+}
+footer {
+    background-color: black;
+    color:white;
+    padding:0.7rem;
+    text-align: center;
+}
+
+
