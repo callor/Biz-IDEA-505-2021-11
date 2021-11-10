@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <context:property-placeholder
-            location="/WEB-INF/spring/props/db.properties"/>
+    <!--
+    jasypt 로 암호화된 username 과 password 를 db.properties 로 부터
+    가져와서 DataSource 의 username password 에 주입하기 우한 코드 구성
+
+    다음 3가지의 bean 이 서로 연동되어 암호화된 문자열을 복화하여 property 에 주입
+    PBEConfig bean 생성
+    PBEStringEncrypt bean 생성
+    PropertyPlaceHolderConfigure 생성
+    -->
+    <bean id="envConfig"
+          class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+        <property name="algorithm" value="PBEWithMD5AndDES"/>
+        <property name="passwordEnvName" value="callor.com"/>
+    </bean>
+
+    <bean id="encryptor"
+          class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+        <property name="config" ref="envConfig"/>
+    </bean>
+    <bean
+            class="org.jasypt.spring31.properties.EncryptablePropertyPlaceholderConfigurer">
+        <constructor-arg ref="encryptor"/>
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/spring/props/db.conn.properties</value>
+            </list>
+        </property>
+    </bean>
 
     <bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="driverClassName" value="${driverClassName}"/>
-        <property name="url" value="${url}" />
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="driverClassName" value="${db.driver}"/>
+        <property name="url" value="${db.url}" />
     </bean>
 
 </beans>
