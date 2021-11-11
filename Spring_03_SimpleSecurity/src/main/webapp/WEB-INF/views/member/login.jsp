@@ -57,11 +57,9 @@
         border-radius: 25px;
         transition: 0.3s;
     }
-
     form.login_form button:hover {
         background-color: #2ECC71;
     }
-
 </style>
 
 <form:form action="${rootPath}/login" cssClass="login_form">
@@ -70,8 +68,13 @@
         <c:if test="${param.error != null}">
             <h3>로그인 오류!!!</h3>
         </c:if>
-        <input placeholder="사용자 ID">
-        <input placeholder="비밀번호" type="password">
+        <input
+                placeholder="사용자 ID"
+                name="username">
+        <input
+                placeholder="비밀번호"
+                type="password"
+                name="password">
         <button>로그인</button>
         <button type="button">회원가입</button>
     </fieldset>

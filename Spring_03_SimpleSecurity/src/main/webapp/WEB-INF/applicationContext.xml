@@ -4,6 +4,15 @@
        xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
 
+    <!--
+    spring security 에 내장된 암호 검사 코드에서
+    사용할 bean
+    -->
+    <bean  id="passwordEncoder"
+            class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <constructor-arg index="0" value="4" />
+    </bean>
+
     <bean id="cookieCsrfTokenRepository"
           class="org.springframework.security.web.csrf.CookieCsrfTokenRepository">
         <property name="cookieHttpOnly" value="false"/>
