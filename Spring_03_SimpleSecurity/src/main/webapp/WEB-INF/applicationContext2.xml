@@ -33,11 +33,13 @@
                 password-parameter="password"/>
 
     </security:http>
-
-    <bean id="loginService"
-          class="com.callor.sec.service.LoginService"/>
     <security:authentication-manager>
-        <security:authentication-provider
-                user-service-ref="loginService"/>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="callor"
+                               authorities="ROLE_ADMIN"
+                               password="$2a$04$Hdu3p5qGzssmGRpq.I9UrehUnkLBtWXOMBy/FOSZMgm5rNAqSSOHa"/>
+            </security:user-service>
+        </security:authentication-provider>
     </security:authentication-manager>
 </beans>

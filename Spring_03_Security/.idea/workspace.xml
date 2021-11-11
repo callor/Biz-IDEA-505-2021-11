@@ -11,7 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="664d2f71-c5f9-47cd-821a-8f90ee1228fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Spring_03_SimpleSecurity/src/main/webapp/WEB-INF/views/member/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring_03_SimpleSecurity/src/main/webapp/WEB-INF/views/member/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring_03_SimpleSecurity/src/main/java/com/callor/sec/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring_03_SimpleSecurity/src/main/java/com/callor/sec/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring_03_SimpleSecurity/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring_03_SimpleSecurity/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
