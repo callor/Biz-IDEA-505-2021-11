@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Spring_03_Security:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/Spring_03_Security_war_exploded</output-path>
+  <artifact type="exploded-war" name="sec:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/sec_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Spring_03_Security" />
+          <element id="module-output" name="sec" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.18.RELEASE" />
@@ -23,10 +23,16 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.32" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.6" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.6" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="Spring_03_Security/web/Web" />
+      <element id="javaee-facet-resources" facet="sec/web/Web" />
     </root>
   </artifact>
 </component>
