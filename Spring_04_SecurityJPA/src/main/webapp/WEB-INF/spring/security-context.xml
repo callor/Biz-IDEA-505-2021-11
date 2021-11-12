@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:security="http://www.springframework.org/schema/security"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--
     spring security 에 내장된 암호 검사 코드에서
@@ -21,15 +22,17 @@
     <security:http
             pattern="/webjars/**" security="none"/>
     <security:http
-            pattern="/static/**" security="none"/>
+            pattern="/static" security="none"/>
 
     <security:http use-expressions="true">
         <security:intercept-url pattern="/login" access="permitAll"/>
-        <security:intercept-url pattern="/member/login" access="permitAll"/>
-        <security:intercept-url pattern="/member/join" access="permitAll"/>
-        <security:intercept-url pattern="/static/**" access="permitAll()" />
+
+        <security:intercept-url pattern="/member/mypage" access="isAuthenticated()"/>
+        <security:intercept-url pattern="/member/**" access="permitAll"/>
+
+        <security:intercept-url pattern="/static" access="permitAll()" />
         <security:intercept-url pattern="/webjars/**" access="permitAll()"/>
-        <security:intercept-url pattern="/**" access="isAuthenticated()" />
+        <security:intercept-url pattern="/" access="isAuthenticated()" />
         <security:logout />
         <security:csrf
                 token-repository-ref="cookieCsrfTokenRepository"/>
@@ -42,8 +45,8 @@
 
     </security:http>
 
-    <bean id="loginService"
-          class="com.callor.sec.service.LoginService"/>
+    <context:component-scan base-package="com.callor.sec.service.auth" />
+<!--    <bean id="loginService" class="com.callor.sec.service.auth.LoginService"/>-->
     <security:authentication-manager>
         <security:authentication-provider
                 user-service-ref="loginService"/>

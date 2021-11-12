@@ -1,4 +1,4 @@
-package com.callor.sec.service;
+package com.callor.sec.service.auth;
 
 import com.callor.sec.models.UserDetailsVO;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +7,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.List;
  * uds.loadUserByUsername(username)
  */
 @Slf4j
+@Service("loginService")
 public class LoginService implements UserDetailsService {
 
     private final String encPassword = "$2a$04$Hdu3p5qGzssmGRpq.I9UrehUnkLBtWXOMBy/FOSZMgm5rNAqSSOHa";
