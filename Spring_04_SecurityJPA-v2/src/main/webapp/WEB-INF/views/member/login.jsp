@@ -17,7 +17,7 @@
     <fieldset>
         <h2>로그인</h2>
         <c:if test="${param.error != null}">
-            <h3>로그인 오류!!!</h3>
+            <h3>${ERROR_MSG == null ? "로그인을 하세요" : ERROR_MSG}</h3>
         </c:if>
         <input
                 placeholder="사용자 ID"
@@ -30,3 +30,4 @@
         <button class="btn btn_join" type="button">회원가입</button>
     </fieldset>
 </form:form>
+<h1>${AUTHOR}</h1>

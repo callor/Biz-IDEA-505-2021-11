@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 @Service("loginService")
 public class LoginService implements UserDetailsService {
 
-    // private final String encPassword = "$2a$04$Hdu3p5qGzssmGRpq.I9UrehUnkLBtWXOMBy/FOSZMgm5rNAqSSOHa";
+    private final String encPassword = "$2a$04$Hdu3p5qGzssmGRpq.I9UrehUnkLBtWXOMBy/FOSZMgm5rNAqSSOHa";
     private final MemberDao memberDao;
     public LoginService(MemberDao memberDao) {
         this.memberDao = memberDao;
@@ -34,15 +34,15 @@ public class LoginService implements UserDetailsService {
         //  username 으로 member table 에서
         // findById(username) 등을 수행하여
         // User 정보를 가져온다
-        //UserDetailsVO userVO = UserDetailsVO.builder()
-        //        .username("callor")
-        //        .password(encPassword)
-        //        .isAccountNonExpired(true)
-        //        .isEnabled(true)
-        //        .isCredentialsNonExpired(true)
-        //        .isAccountNonLocked(true)
-        //       .build();
-        UserDetailsVO userVO = memberDao.findById(username).get();
+        UserDetailsVO userVO = UserDetailsVO.builder()
+                .username("callor")
+                .password(encPassword)
+                .isAccountNonExpired(true)
+                .isEnabled(false)
+                .isCredentialsNonExpired(true)
+                .isAccountNonLocked(true)
+               .build();
+        // UserDetailsVO userVO = memberDao.findById(username).get();
 
         // 2. dao 에서 받은 사용자 정보가 없으면
         //      즉 username 에 저장된 사용자이름이

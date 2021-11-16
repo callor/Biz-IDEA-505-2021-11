@@ -48,13 +48,15 @@
                 login-page="/member/login"
                 login-processing-url="/login"
                 username-parameter="username"
-                password-parameter="password"/>
+                password-parameter="password"
+                authentication-failure-handler-ref="loginFailService"/>
     </security:http>
 
     <context:component-scan base-package="com.callor.sec.service.auth" />
 <!--    <bean id="loginService" class="com.callor.sec.service.auth.LoginService"/>-->
     <security:authentication-manager>
         <security:authentication-provider
+                ref="authenticationProvider"
                 user-service-ref="loginService"/>
     </security:authentication-manager>
 </beans>

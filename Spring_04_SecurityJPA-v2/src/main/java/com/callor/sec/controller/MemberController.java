@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,10 +26,20 @@ public class MemberController {
 
     // login form 을 열기 위한 URL
     @RequestMapping(value="/login", method= RequestMethod.GET)
-    public String login() {
+    public String login(String ERROR_MSG, String AUTHOR, Model model) {
+
+        log.debug("GET Login");
+        model.addAttribute("ERROR_MSG",ERROR_MSG);
+        model.addAttribute("AUTHOR",AUTHOR);
+
         return "member/login";
     }
 
+    @RequestMapping(value="/login",method=RequestMethod.POST)
+    public String login_fail() {
+        log.debug("POST Login");
+        return "member/login";
+    }
 
     @RequestMapping(value="/join",method=RequestMethod.GET)
     public String join() {
