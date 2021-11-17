@@ -4,9 +4,8 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 /**
  * web.xml 을 대신할 config 클래스
- *
  */
-public class AppConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class AppWebXmlConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 
     // <context-param> 에 설정한
@@ -20,7 +19,10 @@ public class AppConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     // servlet-context.xml 을 초기화 할 method
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{ServletConfig.class};
+        return new Class[]{
+                ServletConfig.class,
+                MyBatisConfig.class
+        };
     }
 
     // servlet-mapping 에 설정한
