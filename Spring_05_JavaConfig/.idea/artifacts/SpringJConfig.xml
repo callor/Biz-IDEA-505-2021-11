@@ -25,6 +25,14 @@
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.7" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.18.RELEASE" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.7" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.7" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.32" />
+          <element id="library" level="project" name="Maven: org.jasypt:jasypt:1.9.3" />
+          <element id="library" level="project" name="Maven: org.jasypt:jasypt-spring31:1.9.3" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Spring_05_JavaConfig/web/Web" />
