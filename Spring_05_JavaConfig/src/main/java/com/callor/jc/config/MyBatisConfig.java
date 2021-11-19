@@ -32,29 +32,19 @@ public class MyBatisConfig {
     private String password;
 
 
-    private EnvironmentStringPBEConfig envConfig() {
-        EnvironmentStringPBEConfig config
-                = new EnvironmentStringPBEConfig();
-        config.setAlgorithm("PBEWithMD5AndDES");
-        config.setPasswordEnvName("callor.com");
-        return config;
+    private final StandardPBEStringEncryptor encryptor;
+    public MyBatisConfig(StandardPBEStringEncryptor encryptor) {
+        this.encryptor = encryptor;
     }
-    private StandardPBEStringEncryptor encryptor() {
-        StandardPBEStringEncryptor encryptor
-                = new StandardPBEStringEncryptor();
-        encryptor.setConfig(this.envConfig());
-        return encryptor;
-    }
-
     // dataSource
     private DataSource getDataSource() {
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName(driver);
         ds.setUrl(url);
         String planUsername
-                = this.encryptor().decrypt(username);
+                = encryptor.decrypt(username);
         String planPassword
-                = this.encryptor().decrypt(password);
+                = encryptor.decrypt(password);
         ds.setUsername(planUsername);
         ds.setPassword(planPassword);
         return ds;

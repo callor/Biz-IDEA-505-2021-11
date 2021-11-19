@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class NaverConnection {
 
-    private final static String CLIENT_ID = "YOUR NAVER CLIENT ID";
-    private final static String CLIENT_SECRET = "YOUR NAVER CLIENT SECRET";
+    private final static String CLIENT_ID = "okkFMH1_dihHcZbpt0Xy";
+    private final static String CLIENT_SECRET = "dsbjMg6tzY";
     private final static String BASE_FOLDER = "./src/main/resources/";
 
     public static void main(String[] args) throws FileNotFoundException {

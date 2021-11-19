@@ -27,6 +27,11 @@ nav {
     padding: 0.6rem;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
 nav input {
     border-radius: 5px;
     outline: none;

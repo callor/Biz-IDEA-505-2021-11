@@ -19,8 +19,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {
+        "com.callor.jc.config.beans",
         "com.callor.jc.controller",
         "com.callor.jc.service"
+
         })
 public class ServletConfig implements WebMvcConfigurer {
 

@@ -8,14 +8,22 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>나의 독서록</title>
-    <link href="${rootPath}/static/main.css" rel="stylesheet">
+    <link href="${rootPath}/static/main.css?ver=2021-11-19-001" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>READ BOOK 2021</h1>
     </header>
     <nav>
-        <input placeholder="검색어를 입력하세요">
+        <ul>
+            <li>Home</li>
+            <li>
+                <form method="POST">
+                <input name="search"
+                       placeholder="검색어를 입력하세요">
+                </form>
+            </li>
+        </ul>
     </nav>
     <section class="main">
 
