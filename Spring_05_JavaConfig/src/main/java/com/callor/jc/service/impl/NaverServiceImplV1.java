@@ -1,19 +1,20 @@
 package com.callor.jc.service.impl;
 
 import com.callor.jc.models.BookVO;
+import com.callor.jc.models.NaverRestLayout;
 import com.callor.jc.service.NaverService;
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
+import java.net.*;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,9 +30,9 @@ import java.util.List;
 *
  */
 @Slf4j
-@Service
 
-public class NaverServiceV1 extends NaverService<BookVO> {
+@Service("naverServiceV1")
+public class NaverServiceImplV1 extends NaverService<BookVO> {
 
     @Value("${naver.client_id}")
     private String naver_client_id;
@@ -40,7 +41,7 @@ public class NaverServiceV1 extends NaverService<BookVO> {
     private String naver_client_secret;
 
     private final StandardPBEStringEncryptor encryptor;
-    public NaverServiceV1(StandardPBEStringEncryptor encryptor) {
+    public NaverServiceImplV1(StandardPBEStringEncryptor encryptor) {
         this.encryptor = encryptor;
     }
 
@@ -83,9 +84,45 @@ public class NaverServiceV1 extends NaverService<BookVO> {
         return  stringBuffer.toString();
     }
 
+    /**
+     * RestTemplate 을 사용하여 naver 도서정보 가져오기
+     */
     @Override
-    public List<BookVO> naverList(String queryString) {
-        return null;
+    public List<BookVO> naverList(String queryString) throws URISyntaxException {
+
+        /**
+         * VO 클래스를 Wrapping 하여 API 데이터 가져오기
+         */
+        RestTemplate restTemp = new RestTemplate();
+        ResponseEntity<NaverRestLayout> restList = null;
+
+        URI restURI = new URI(queryString);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-Naver-Client-Id",
+                encryptor.decrypt(naver_client_id));
+        headers.set("X-Naver-Client-Secret",
+                encryptor.decrypt(naver_client_secret));
+
+        // API 에서 XML, JSON 데이터를 한가지 URL로 요청하는 경우
+        // 수신한 데이터 Type 을 지정해주기
+        headers.setAccept(
+                Collections.singletonList(MediaType.APPLICATION_JSON)
+        );
+
+        // 설정된 header 정보를 Http 프로토콜에 담기
+        HttpEntity<String> httpEntity
+                = new HttpEntity<String>("parameters", headers);
+
+
+        restList = restTemp.exchange(
+                restURI,
+                HttpMethod.GET,httpEntity,
+                NaverRestLayout.class);
+
+        return restList.getBody().getItems();
+
     }
+
 
 }

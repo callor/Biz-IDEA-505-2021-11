@@ -1,12 +1,10 @@
 package com.callor.jc.service;
 
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -14,10 +12,8 @@ import java.util.List;
 public abstract class NaverService<T> {
 
 
-    private final String NAVER_BOOK_URL
+    public static final String NAVER_BOOK_URL
             = "https://openapi.naver.com/v1/search/book.json";
-
-
 
     // 필수적으로 생성할 method
     public String queryString(String search) throws UnsupportedEncodingException {
@@ -30,6 +26,6 @@ public abstract class NaverService<T> {
 
     // 선택적으로 사용할 method
     public abstract String getJsonString(String queryString) throws IOException;
-    public abstract List<T> naverList(String queryString);
+    public abstract List<T> naverList(String queryString) throws URISyntaxException;
 
 }
