@@ -2,7 +2,7 @@ package com.callor.jc.controller;
 
 
 import com.callor.jc.repository.BookDao;
-import com.callor.jc.service.NaverServiceV1;
+import com.callor.jc.service.impl.NaverServiceV1;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +37,7 @@ public class HomeController {
             produces = "application/json;charset=UTF-8"
             )
     public String home(String search) throws IOException {
-        String queryString = naverService.queryURL(search);
+        String queryString = naverService.queryString(search);
         String jsonString = naverService.getJsonString(queryString);
         return jsonString;
     }

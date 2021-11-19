@@ -1,5 +1,7 @@
-package com.callor.jc.service;
+package com.callor.jc.service.impl;
 
+import com.callor.jc.models.BookVO;
+import com.callor.jc.service.NaverService;
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.List;
 
 /**
  *
@@ -27,8 +30,8 @@ import java.net.URLEncoder;
  */
 @Slf4j
 @Service
-@PropertySource("classpath:naver.properties")
-public class NaverServiceV1 {
+
+public class NaverServiceV1 extends NaverService<BookVO> {
 
     @Value("${naver.client_id}")
     private String naver_client_id;
@@ -37,21 +40,12 @@ public class NaverServiceV1 {
     private String naver_client_secret;
 
     private final StandardPBEStringEncryptor encryptor;
-
     public NaverServiceV1(StandardPBEStringEncryptor encryptor) {
         this.encryptor = encryptor;
     }
 
-    private final String NAVER_BOOK_URL
-            = "https://openapi.naver.com/v1/search/book.json";
-
-    public String queryURL(String search) throws UnsupportedEncodingException {
-
-    }
-
     // naver open API 에 연결하기
-    public String getJsonString(String queryString)
-                                throws IOException {
+    public String getJsonString(String queryString) throws IOException {
 
         URL url = new URL(queryString);
         HttpURLConnection httpCon
@@ -87,6 +81,11 @@ public class NaverServiceV1 {
             stringBuffer.append(reader);
         }
         return  stringBuffer.toString();
+    }
+
+    @Override
+    public List<BookVO> naverList(String queryString) {
+        return null;
     }
 
 }
