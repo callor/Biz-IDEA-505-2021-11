@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+header,nav, section.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: gray;
+    padding:2rem;
+    color: black;
+}
+nav {
+    background-color: green;
+    padding: 0.6rem;
+}
+
+nav input {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 5px;
+    display: inline-block;
+    width: 30%;
+}
+
+section.main {
+    flex:1
+}
+footer {
+    background-color: blue;
+    color:white;
+    text-align: center;
+    padding:0.7rem
+}
+
+
+

@@ -1,16 +1,27 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: callor
-  Date: 2021-11-17
-  Time: 오전 10:41
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>나의 독서록</title>
+    <link href="${rootPath}/static/main.css" rel="stylesheet">
 </head>
 <body>
-    <h1>나의 홈페이지</h1>
+    <header>
+        <h1>READ BOOK 2021</h1>
+    </header>
+    <nav>
+        <input placeholder="검색어를 입력하세요">
+    </nav>
+    <section class="main">
+
+    </section>
+    <footer>
+        <address>CopyRight &copy; callor@callor.com</address>
+    </footer>
 </body>
 </html>
